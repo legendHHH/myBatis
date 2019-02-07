@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test">
+	<!-- 
+	查询操作
+	根据id查询用户对象
+	public User findUserById(int id){}
+	 -->
+	<select id="findUserById" parameterType="int" resultType="com.myBaits.po.User">
+		select * from user where id=#{id}
+	</select>
+	
+	
+	<!-- 插入操作 -->
+	<insert id="insertUser" parameterType="com.myBaits.po.User">
+		<!-- 主键映射 -->
+		<selectKey keyProperty="id" order="AFTER" resultType="int"></selectKey>
+		insert into user() values();
+	</insert>
+</mapper>
